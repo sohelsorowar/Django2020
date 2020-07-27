@@ -6,8 +6,5 @@ from .models import Destination
 
 def index(request):
 
-    dest1 = Destination()
-    dest1.name = 'Dhaka'
-    dest1.desc = 'The most populated city'
-    dest1.price = 1000
-    return render(request,"index.html", {'dest1': dest1})
+   dests = Destination.objects.all()
+   return render(request,"index.html", {'dests': dests})
